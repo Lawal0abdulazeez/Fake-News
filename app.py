@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 import joblib
 import pandas as pd
-from werkzeug.urls import quote  # Import quote instead of url_quote
+import numpy as np
+from werkzeug.urls import url_quote  # Import quote instead of url_quote
 
 app = Flask(__name__)
 
