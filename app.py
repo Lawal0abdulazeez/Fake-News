@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
-import pickle
+import joblib
 import pandas as pd
 
 app = Flask(__name__)
 
 # Load the pickled XGBoost model
 with open('xgb_model.pkl', 'rb') as model_file:
-    loaded_xgb_model = pickle.load(model_file)
+    loaded_xgb_model = joblib.load(model_file)
+
 
 # Home route
 @app.route('/')
