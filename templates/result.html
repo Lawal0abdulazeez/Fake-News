@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .result-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #3498db;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result-container">
+        <p><strong>Text Input:</strong> {{ text_input }}</p>
+        <p><strong>Prediction:</strong> {{ result }}</p>
+        {% if result == 'Fake' %}
+            <p>This text is classified as <span style="color: red;">Fake News</span>.</p>
+            <p>Please be cautious and verify information from reliable sources.</p>
+        {% else %}
+            <p>This text is classified as <span style="color: green;">Real News</span>.</p>
+            <p>You can trust the information provided.</p>
+        {% endif %}
+    </div>
+    <a href="/">Go back</a>
+</body>
+</html>
